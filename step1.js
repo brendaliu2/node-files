@@ -14,6 +14,7 @@ async function cat(path) {
 }
 
 const argv = process.argv;
+//TODO:make variable for argv[2]
 cat(argv[2]);
 
 // for(let i = 0; i < argv.length; i++){

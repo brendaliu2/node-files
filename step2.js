@@ -24,7 +24,7 @@ function runFile(arg){
     webCat(arg);
 
   }catch (err){
-    console.info(err); //verbose q
+    // console.info(err); //verbose q
     cat(arg);
   }
 
@@ -36,10 +36,12 @@ async function webCat(URL){
     const resp = await axios.get(`${URL}`);
     console.log(resp.data);
   } catch(err){
-    console.log(err.code);
+    console.log(err.response.status);
     // how to access first error line
     process.exit(1);
   }
 }
 
+
+//make argv a variable at top
 runFile(argv[2]); //way to make less rigid?
